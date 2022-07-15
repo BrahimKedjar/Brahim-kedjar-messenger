@@ -46,13 +46,11 @@ const Register = () => {
               error: null,
               loading: false,
             });
-            
+            navigat('/')
           } 
           catch (err) {
             setData({ ...data, error: err.message, loading: false });
-          } if (error) {
-            navigat('/login')
-          }
+          } 
         };
   return (
     <section>
