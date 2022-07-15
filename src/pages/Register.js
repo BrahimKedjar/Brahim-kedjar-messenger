@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../firebase";
 import { setDoc, doc, Timestamp } from "firebase/firestore";
-import {useNavigate} from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 const Register = () => {
-    const navigate = useNavigate();
+  const navigat = useNavigate()
         const [data, setData] = useState({
           name: "",
           email: "",
@@ -48,9 +47,12 @@ const Register = () => {
               loading: false,
             });
             
-          } catch (err) {
+          } 
+          catch (err) {
             setData({ ...data, error: err.message, loading: false });
-          } navigate("/");
+          } if (error) {
+            navigat('/login')
+          }
         };
   return (
     <section>

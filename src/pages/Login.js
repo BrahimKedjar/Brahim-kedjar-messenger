@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     setData({ ...data, error: null, loading: true });
     if (!email || !password) {
-      setData({ ...data, error: "All fields are required" });
+      setData({ ...data, error: "All fields are required" })
     }
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Camera from "../components/svg/Camera";
-import Img from "../image1.png";
+import Img from "../image1.jpg";
 import { storage, db, auth } from "../firebase";
 import {ref,getDownloadURL,uploadBytes,deleteObject} from "firebase/storage";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
@@ -18,7 +18,6 @@ const Profile = () => {
                 setUser(docSnap.data())
             }
         });
-       
         if (img) {
             const uploadImg = async () => {
                 const imgRef = ref(
